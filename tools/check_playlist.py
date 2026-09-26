@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Triggered health audit for current playlist.
+# Audit trigger: current playlist HEAD 2026-09-26.
 import concurrent.futures
 import json
 import re
