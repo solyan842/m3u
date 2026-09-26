@@ -148,7 +148,7 @@ https://e3.endpoint.cdn.sctvonline.vn/secure/vtvcab20/index.m3u8?md5=-sx6Mn0Nya1
 #EXTINF:-1 tvg-id="vtvcab3hd" group-title="VTVcab" tvg-logo="https://i.ibb.co/3r4zsVG/VCab3-cc.webp",VTVcab3
 https://e3.endpoint.cdn.sctvonline.vn/secure/vtvcab3/index.m3u8?md5=ytdJ0cly8LCK3zdy10OuxQ&expires=2556118740|Referer=http://sctvonline.vn/
 #EXTINF:-1 tvg-id="vtvcab4hd" group-title="VTVcab" tvg-logo="https://i.ibb.co/4d5KYz8/VCab4-cc.webp",VTVcab4
-https://api.vthanhtivi.pw/v2/getlink/vieon2/d49ffe96-d3da-46d6-8e40-6572f2db0645/playlist.m3u8
+https://e3.endpoint.cdn.sctvonline.vn/channel/vtvcab4/index.m3u8
 #EXTINF:-1 tvg-id="vtvcab5hd" group-title="VTVcab" tvg-logo="https://i.ibb.co/x6FrQSw/VCab5-cc.webp",VTVcab5
 https://e3.endpoint.cdn.sctvonline.vn/secure/vtvcab5/index.m3u8?md5=FI0vSweK0ZjVtshOO-v3LA&expires=2556118740|Referer=http://sctvonline.vn/
 #EXTINF:-1 tvg-id="vtvcab6hd" group-title="VTVcab" tvg-logo="https://i.ibb.co/37hkhwk/VCab6-cc.webp",VTVcab6
@@ -380,7 +380,7 @@ https://code.vthanhtivi.pw/getlink/cliptv/man/chunklist_b5128000.m3u8
 #EXTINF:-1 tvg-id="boxmovie1" group-title="Box" tvg-logo="https://static.wikia.nocookie.net/logos/images/c/c5/Box_Movie_1.png/revision/latest?cb=20220225030512&path-prefix=vi",Box Movie 1
 http://sg.tinchuanchuaanh.com:8080/BOX_MOVIE_1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="musicbox" group-title="Box" tvg-logo="https://i.ibb.co/Z17szpD/Box-Music-cc.webp",Box Music
-https://code.vthanhtivi.pw/getlink/mytv/69/hd.m3u8
+https://oipf0znpmnliv.vcdn.cloud/hls/boxmusic/index.m3u8
 #EXTINF:-1 tvg-id="planetearthhd" group-title="Box" tvg-logo="https://i.ibb.co/YfRCdT8/Planet-Earth-cc.webp",Box Planet Earth
 https://vtsstr7.tv24.vn/live/smil:Planet_Earth.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="woman" group-title="Box" tvg-logo="https://i.ibb.co/MGcnhnG/Woman-cc.png",Box Woman
