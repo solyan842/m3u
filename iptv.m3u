@@ -1,6 +1,6 @@
 #EXTM3U url-tvg="https://vnepg.site/epg.xml"
 # SolYan IPTV stable rebuild — 2026-09-26
-# HTV/SCTV/VTVcab audited with deep segment probing
+# Core groups audited with deep segment probing
 
 # ===== VTV =====
 #EXTINF:-1 tvg-id="antvhd" group-title="VTV" tvg-logo="https://raw.githubusercontent.com/DinhLap96/ListTivi/main/ListTiVi/Logo/ANTV_logo.png",An Ninh TV
@@ -330,27 +330,25 @@ https://smithsonianaus-samsungau.amagi.tv/playlist1080p.m3u8
 
 # ===== Box =====
 #EXTINF:-1 tvg-id="drfithd" group-title="Box" tvg-logo="https://i.ibb.co/t8SWCHJ/DrFit-cc.webp",Box Dr.Fit
-https://oipf0znpmnliv.vcdn.cloud/hls/drfit/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
+https://cloud.sgchill.io.vn/tv/getlink/source/coban1/index.m3u8?id=162&token=BLjOIlaKSsUaZvtX|User-Agent=VThanhTivi&Referer=https%3A%2F%2Fhoiquan.click%2F
 #EXTINF:-1 tvg-id="happykids" group-title="Box" tvg-logo="https://i.ibb.co/72jD6nC/Happy-Kids-cc.webp",Box Happy Kids
-https://oipf0znpmnliv.vcdn.cloud/hls/happykid/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
+https://cloud.sgchill.io.vn/tv/getlink/source/coban1/index.m3u8?id=212&token=BLjOIlaKSsUaZvtX|User-Agent=VThanhTivi&Referer=https%3A%2F%2Fhoiquan.click%2F
 #EXTINF:-1 tvg-id="boxhits" group-title="Box" tvg-logo="https://img-zlr1.tv360.vn/image1/2021/08/03/16/1627983804741/9828b27e4fe4_640_360.png",Box Hits
 https://ff335120300e4742a2b135ee9a9e7df8.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-5983/master.m3u8
 #EXTINF:-1 tvg-id="hollywoodclassics" group-title="Box" tvg-logo="https://i.ibb.co/FbKGWY3/Hollywood-Classics-cc.webp",Box Hollywood Classics
-https://e4.endpoint.cdn.sctvonline.vn/hls/hollywood/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://cloud.sgchill.io.vn/tv/getlink/source/coban1/index.m3u8?id=160&token=BLjOIlaKSsUaZvtX|User-Agent=VThanhTivi&Referer=https%3A%2F%2Fhoiquan.click%2F
 #EXTINF:-1 tvg-id="man" group-title="Box" tvg-logo="https://i.ibb.co/Yj6BTzZ/Man-cc.webp",Box Man
-https://code.vthanhtivi.pw/getlink/cliptv/man/chunklist_b5128000.m3u8
+https://cloud.sgchill.io.vn/tv/getlink/source/coban1/index.m3u8?id=237&token=BLjOIlaKSsUaZvtX|User-Agent=VThanhTivi&Referer=https%3A%2F%2Fhoiquan.click%2F
 #EXTINF:-1 tvg-id="boxmovie1" group-title="Box" tvg-logo="https://static.wikia.nocookie.net/logos/images/c/c5/Box_Movie_1.png/revision/latest?cb=20220225030512&path-prefix=vi",Box Movie 1
-https://oipf0znpmnliv.vcdn.cloud/hls/boxmovie1/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
+https://cloud.sgchill.io.vn/tv/getlink/source/coban1/index.m3u8?id=159&token=BLjOIlaKSsUaZvtX|User-Agent=VThanhTivi&Referer=https%3A%2F%2Fhoiquan.click%2F
 #EXTINF:-1 tvg-id="musicbox" group-title="Box" tvg-logo="https://i.ibb.co/Z17szpD/Box-Music-cc.webp",Box Music
-https://oipf0znpmnliv.vcdn.cloud/hls/boxmusic/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
+https://toiyeuvietnam.dpdns.org/CoBan/music-box/TuyetDoiKhongKinhDoanh.m3u8
 #EXTINF:-1 tvg-id="planetearthhd" group-title="Box" tvg-logo="https://i.ibb.co/YfRCdT8/Planet-Earth-cc.webp",Box Planet Earth
-https://oipf0znpmnliv.vcdn.cloud/hls/planetearth/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
+https://cloud.sgchill.io.vn/tv/getlink/source/coban1/index.m3u8?id=135&token=BLjOIlaKSsUaZvtX|User-Agent=VThanhTivi&Referer=https%3A%2F%2Fhoiquan.click%2F
 #EXTINF:-1 tvg-id="woman" group-title="Box" tvg-logo="https://i.ibb.co/MGcnhnG/Woman-cc.png",Box Woman
-https://oipf0znpmnliv.vcdn.cloud/hls/woman/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
-#EXTINF:-1 tvg-id="filmbox" group-title="Box" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Filmbox_pl.png/220px-Filmbox_pl.png",Filmbox
-http://94.230.240.17:8080/film_box/tracks-v1a1/mono.m3u8
+https://cloud.sgchill.io.vn/tv/getlink/source/coban1/index.m3u8?id=163&token=BLjOIlaKSsUaZvtX|User-Agent=VThanhTivi&Referer=https%3A%2F%2Fhoiquan.click%2F
 #EXTINF:-1 tvg-id="inthebox" group-title="Box" tvg-logo="https://static.wikia.nocookie.net/logos/images/4/4c/In_The_Box_Channel_2017.png/revision/latest/scale-to-width-down/200?cb=20220515095644&path-prefix=vi",In The Box
-http://sg.tinchuanchuaanh.com:8080/IN_THE_BOX/tracks-v1a1/mono.m3u8
+https://cloud.sgchill.io.vn/tv/getlink/source/coban1/index.m3u8?id=235&token=BLjOIlaKSsUaZvtX|User-Agent=VThanhTivi&Referer=https%3A%2F%2Fhoiquan.click%2F
 
 # ===== Âm nhạc =====
 #EXTINF:-1 group-title="Âm nhạc" tvg-logo="https://logos-download.com/wp-content/uploads/2020/06/1HD_Music_Television_Logo.png",1HD Music
