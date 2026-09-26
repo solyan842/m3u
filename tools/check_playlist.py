@@ -78,6 +78,95 @@ def parse_playlist(text):
             pending = {}
     return channels
 
+
+def fetch_url(url, headers, ctx, limit=READ_LIMIT, range_bytes=None):
+    h = dict(headers)
+    if range_bytes:
+        h["Range"] = range_bytes
+    req = urllib.request.Request(url, headers=h, method="GET")
+    with urllib.request.urlopen(req, timeout=TIMEOUT, context=ctx) as resp:
+        status = getattr(resp, "status", None) or resp.getcode()
+        data = resp.read(limit)
+        return status, resp.geturl(), resp.headers.get("Content-Type", ""), data
+
+def first_media_uri(text):
+    lines = [x.strip() for x in text.splitlines() if x.strip()]
+    for i, line in enumerate(lines):
+        if line.startswith("#EXT-X-STREAM-INF"):
+            for j in range(i + 1, len(lines)):
+                if not lines[j].startswith("#"):
+                    return "variant", lines[j]
+    for line in lines:
+        if not line.startswith("#"):
+            return "segment", line
+    return None, None
+
+def drm_info(text):
+    tags = [x.strip() for x in text.splitlines() if x.strip().startswith("#EXT-X-KEY")]
+    if not tags:
+        return {"encrypted": False, "drm": False, "tags": []}
+    drm = any(("SAMPLE-AES" in t.upper()) or ("KEYFORMAT" in t.upper()) for t in tags)
+    return {"encrypted": True, "drm": drm, "tags": tags[:4]}
+
+def deep_probe_hls(text, base_url, headers, ctx):
+    info = {
+        "deep_ok": False,
+        "variant_status": None,
+        "segment_status": None,
+        "segment_bytes": 0,
+        "encrypted": False,
+        "drm": False,
+        "drm_tags": [],
+        "deep_error": "",
+    }
+    try:
+        kind, uri = first_media_uri(text)
+        current_text = text
+        current_url = base_url
+
+        d = drm_info(current_text)
+        info["encrypted"] = d["encrypted"]
+        info["drm"] = d["drm"]
+        info["drm_tags"] = d["tags"]
+
+        if kind == "variant" and uri:
+            variant_url = urllib.parse.urljoin(current_url, uri)
+            st, final_url, _ct, data = fetch_url(variant_url, headers, ctx)
+            info["variant_status"] = st
+            if not (200 <= int(st) < 400):
+                info["deep_error"] = f"Variant HTTP {st}"
+                return info
+            current_text = data.decode("utf-8", "ignore")
+            current_url = final_url
+            if "#EXTM3U" not in current_text:
+                info["deep_error"] = "Variant is not HLS"
+                return info
+            d = drm_info(current_text)
+            info["encrypted"] = info["encrypted"] or d["encrypted"]
+            info["drm"] = info["drm"] or d["drm"]
+            info["drm_tags"] = (info["drm_tags"] + d["tags"])[:4]
+            kind, uri = first_media_uri(current_text)
+
+        if kind != "segment" or not uri:
+            info["deep_error"] = "No media segment found"
+            return info
+
+        segment_url = urllib.parse.urljoin(current_url, uri)
+        st, _final, _ct, data = fetch_url(
+            segment_url, headers, ctx, limit=4096, range_bytes="bytes=0-4095"
+        )
+        info["segment_status"] = st
+        info["segment_bytes"] = len(data)
+        if 200 <= int(st) < 400 and len(data) > 0:
+            info["deep_ok"] = not info["drm"]
+            if info["drm"]:
+                info["deep_error"] = "DRM/SAMPLE-AES detected"
+        else:
+            info["deep_error"] = f"Segment HTTP {st}"
+    except Exception as e:
+        info["deep_error"] = f"{type(e).__name__}: {e}"
+    return info
+
 def is_hls_url(url):
     low = url.lower()
     return ".m3u8" in low or low.endswith(".m3u") or "/hls/" in low or "manifest" in low or "chunklist" in low or "playlist" in low
@@ -106,6 +195,13 @@ def check_channel(ch):
         "kind": "",
         "error": "",
         "elapsed_ms": 0,
+        "deep_ok": None,
+        "variant_status": None,
+        "segment_status": None,
+        "segment_bytes": 0,
+        "encrypted": False,
+        "drm": False,
+        "deep_error": "",
     }
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT, context=ctx) as resp:
@@ -119,6 +215,10 @@ def check_channel(ch):
             if "#EXTM3U" in text:
                 result["kind"] = "hls"
                 result["ok"] = 200 <= int(result["status"]) < 400
+                if ch["group"] in ("HTV", "SCTV"):
+                    deep = deep_probe_hls(text, result["final_url"] or ch["url"], headers, ctx)
+                    result.update(deep)
+                    result["ok"] = bool(deep["deep_ok"])
             elif ctype.startswith("audio/") or ctype.startswith("video/") or "octet-stream" in ctype:
                 result["kind"] = "media"
                 result["ok"] = 200 <= int(result["status"]) < 400 and len(data) > 0
@@ -187,7 +287,10 @@ def main():
     print("\nFAILED CHANNELS")
     for r in results:
         if not r["ok"]:
-            print(f"[FAIL] {r['group']} | {r['name']} | status={r['status']} | {r['error']} | {r['url']}")
+            extra = ""
+            if r.get("deep_ok") is not None:
+                extra = f" | deep={r.get('deep_ok')} variant={r.get('variant_status')} segment={r.get('segment_status')} drm={r.get('drm')} deep_error={r.get('deep_error')}"
+            print(f"[FAIL] {r['group']} | {r['name']} | status={r['status']} | {r['error']} | {r['url']}{extra}")
 
 if __name__ == "__main__":
     main()
