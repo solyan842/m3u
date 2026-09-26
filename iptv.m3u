@@ -1,6 +1,6 @@
 #EXTM3U url-tvg="https://vnepg.site/epg.xml"
 # SolYan IPTV clean merge — audited 2026-09-26
-# Sources: DinhLap96/ListTivi + current provider/community cross-checks
+# Sources: DinhLap96/ListTivi + current provider/community cross-checks + live health audit
 
 # ===== VTV =====
 #EXTINF:-1 tvg-id="antvhd" group-title="VTV" tvg-logo="https://raw.githubusercontent.com/DinhLap96/ListTivi/main/ListTiVi/Logo/ANTV_logo.png",An Ninh TV
@@ -14,15 +14,15 @@ https://live.fptplay53.net/live/media/vtv1/live247-hls-avc/vtv1.m3u8
 #EXTINF:-1 tvg-id="vtv10hd" group-title="VTV" tvg-logo="https://raw.githubusercontent.com/DinhLap96/ListTivi/main/ListTiVi/Logo/VTV10_logo.png",VTV10
 https://live.fptplay53.net/live/media/vtv10/live247-hls-avc/vtv10.m3u8
 #EXTINF:-1 tvg-id="vtv2hd" group-title="VTV" tvg-logo="https://raw.githubusercontent.com/DinhLap96/ListTivi/main/ListTiVi/Logo/VTV2_logo.png",VTV2
-https://e3.endpoint.cdn.sctvonline.vn/hls/vtv2/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://live.fptplay53.net/live/media/vtv2/live247-hls-avc/vtv2.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="vtv3hd" group-title="VTV" tvg-logo="https://raw.githubusercontent.com/DinhLap96/ListTivi/main/ListTiVi/Logo/VTV3_logo.png",VTV3
-https://e2.endpoint.cdn.sctvonline.vn/hls/vtv3/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://live.fptplay53.net/live/media/vtv3/live247-hls-avc/vtv3.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="vtv4hd" group-title="VTV" tvg-logo="https://raw.githubusercontent.com/DinhLap96/ListTivi/main/ListTiVi/Logo/VTV4_logo.png",VTV4
 https://e3.endpoint.cdn.sctvonline.vn/hls/vtv4/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="vtv5hd" group-title="VTV" tvg-logo="https://raw.githubusercontent.com/DinhLap96/ListTivi/main/ListTiVi/Logo/VTV5_logo.png",VTV5
-https://e3.endpoint.cdn.sctvonline.vn/hls/vtv5/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://live.fptplay53.net/live/media/vtv5/live247-hls-avc/vtv5.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="vtv5hdtnb" group-title="VTV" tvg-logo="https://raw.githubusercontent.com/DinhLap96/ListTivi/main/ListTiVi/Logo/VTV5tnb_logo.png",VTV5 Tây Nam Bộ
-https://e3.endpoint.cdn.sctvonline.vn/hls/vtv5_tnb/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://live.fptplay53.net/live/media/vtv5tnb/live-hls-avc/vtv5tnb.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="vtv5hdtn" group-title="VTV" tvg-logo="https://raw.githubusercontent.com/DinhLap96/ListTivi/main/ListTiVi/Logo/VTV5taynguyen_logo.png",VTV5 Tây Nguyên
 https://live.fptplay53.net/live/media/vtv5tn/live-hls-avc/vtv5tn.m3u8
 #EXTINF:-1 tvg-id="vtv6hd" group-title="VTV" tvg-logo="https://raw.githubusercontent.com/DinhLap96/ListTivi/main/ListTiVi/Logo/VTV6_logo.png",VTV6
@@ -46,7 +46,7 @@ https://vips-livecdn.fptplay.net/sdb/htv3_hls.smil/chunklist_b2500000.m3u8|User-
 #EXTINF:-1 tvg-id="htvkey" group-title="HTV" tvg-logo="https://i.ibb.co/McQ45Y9/HTV4.webp",HTV4
 https://vips-livecdn.fptplay.net/sdb/htv4_hls.smil/chunklist_b2500000.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20KM6)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="htv7hd" group-title="HTV" tvg-logo="https://i.ibb.co/C9r5gwM/HTV7-cc.webp",HTV7
-https://e2.endpoint.cdn.sctvonline.vn/hls/htv7/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://live.fptplay53.net/epzch2/htv7hd_abr.smil/chunklist_b4200000.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="htv9hd" group-title="HTV" tvg-logo="https://i.ibb.co/tqvWY3q/HTV9-cc.webp",HTV9
 https://e2.endpoint.cdn.sctvonline.vn/hls/htv9/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="htvccanhachd" group-title="HTV" tvg-logo="https://i.ibb.co/vsq97Rf/HTVCCa-Nhac-cc.webp",HTVC Ca Nhạc
@@ -70,45 +70,45 @@ https://drm-livecdn.hplus.com.vn/CDN-FPT02/HOMESHOPPING-SD-ABR/HTV-ABR/HOMESHOPP
 #EXTINF:-1 tvg-id="btv5hd" group-title="SCTV" tvg-logo="https://i.ibb.co/hFP3xf8/BTV5-cc.webp",BTV5
 https://e2.endpoint.cdn.sctvonline.vn/hls/btv5/sd2/index.m3u8|Referer=http://sctvonline.vn/
 #EXTINF:-1 tvg-id="sctvhdpth" group-title="SCTV" tvg-logo="https://i.ibb.co/23fg0qV/SCTVPhim-cc.webp",SCTV Phim TH
-https://e8.endpoint.cdn.sctvonline.vn/channel/sctvphimtonghop/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://liveh12.vtvprime.vn/hls/SCTVPHIM/03.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv1hd" group-title="SCTV" tvg-logo="https://i.ibb.co/6FB7zBz/SCTV1-cc.webp",SCTV1
-https://e8.endpoint.cdn.sctvonline.vn/channel/sctv1/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://liveh12.vtvprime.vn/hls/SCTV1/03.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv10hd" group-title="SCTV" tvg-logo="https://i.ibb.co/9tKmzD5/SCTV10-cc.webp",SCTV10
 https://e1.endpoint.cdn.sctvonline.vn/hls/sctv10/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="sctv11hd" group-title="SCTV" tvg-logo="https://i.ibb.co/0YC4B8t/SCTV11-cc.webp",SCTV11
-https://e1.endpoint.cdn.sctvonline.vn/channel/sctv11/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://liveh34.vtvprime.vn/hls/SCTV11/03.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv12hd" group-title="SCTV" tvg-logo="https://i.ibb.co/JR8LKdR/SCTV12-cc.webp",SCTV12
 https://e1.endpoint.cdn.sctvonline.vn/channel/sctv12/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="sctv13hd" group-title="SCTV" tvg-logo="https://i.ibb.co/bz9xjYz/SCTV13-cc.webp",SCTV13
-https://e1.endpoint.cdn.sctvonline.vn/channel/sctv13/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://liveh34.vtvprime.vn/hls/SCTV13/03.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv14hd" group-title="SCTV" tvg-logo="https://i.ibb.co/ThjNn6H/SCTV14-cc.webp",SCTV14
-https://e7.endpoint.cdn.sctvonline.vn/live/smil:SCTV14.smil/chunklist_b1692000.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://liveh34.vtvprime.vn/hls/SCTV14/03.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv15hd" group-title="SCTV" tvg-logo="https://i.ibb.co/q1GPVFM/SCTV15-SSport-cc.webp",SCTV15
 https://uy7qk2oykpliv.vcdn.cloud/hls/sctv15/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="sctv16hd" group-title="SCTV" tvg-logo="https://i.ibb.co/934CHgk/SCTV16-cc.webp",SCTV16
-https://e1.endpoint.cdn.sctvonline.vn/channel/sctv16/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://liveh34.vtvprime.vn/hls/SCTV16/04.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv17hd" group-title="SCTV" tvg-logo="https://i.ibb.co/DK7fS8T/SCTV17-cc.webp",SCTV17
 https://e7.endpoint.cdn.sctvonline.vn/live/smil:SCTV17.smil/chunklist_b1692000.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="sctv18hd" group-title="SCTV" tvg-logo="https://i.ibb.co/fGHtx1M/SCTV18-cc.webp",SCTV18
-https://e1.endpoint.cdn.sctvonline.vn/channel/sctv18/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://liveh34.seenow.vn/hls/SCTV18/03.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv19hd" group-title="SCTV" tvg-logo="https://i.ibb.co/31xjyg6/SCTV19-cc.webp",SCTV19
 https://e8.endpoint.cdn.sctvonline.vn/hls/sctv19/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="sctv2hd" group-title="SCTV" tvg-logo="https://i.ibb.co/cJmDkTP/SCTV2-cc.webp",SCTV2
-https://e8.endpoint.cdn.sctvonline.vn/channel/sctv2/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://freem3u.xyz/api/live/play.m3u8?vid=201|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv20hd" group-title="SCTV" tvg-logo="https://i.ibb.co/mXBX0sN/SCTV20-cc.webp",SCTV20
 https://e1.endpoint.cdn.sctvonline.vn/channel/sctv20/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="sctv21hd" group-title="SCTV" tvg-logo="https://i.ibb.co/q7XSnwX/SCTV21-cc.webp",SCTV21
 https://e1.endpoint.cdn.sctvonline.vn/channel/sctv21/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="sctv22hd" group-title="SCTV" tvg-logo="https://i.ibb.co/zxDw1L7/SCTV22-cc.webp",SCTV22
-https://e1.endpoint.cdn.sctvonline.vn/channel/sctv22/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://liveh34.vtvprime.vn/hls/SCTV22/04.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv3hd" group-title="SCTV" tvg-logo="https://i.ibb.co/7QPYf6D/SCTV3-cc.webp",SCTV3
 https://e8.endpoint.cdn.sctvonline.vn/channel/sctv3/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="sctv4hd" group-title="SCTV" tvg-logo="https://i.ibb.co/FwV83nc/SCTV4-cc.webp",SCTV4
-https://e8.endpoint.cdn.sctvonline.vn/hls/sctv4/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://liveh12.vtvprime.vn/hls/SCTV4/03.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv5hd" group-title="SCTV" tvg-logo="https://i.ibb.co/mbDHVPr/SCTV5-cc.webp",SCTV5
 https://e8.endpoint.cdn.sctvonline.vn/hls/sctv5/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="sctv6hd" group-title="SCTV" tvg-logo="https://i.ibb.co/g4rNcCM/SCTV6-cc.webp",SCTV6
-https://e1.endpoint.cdn.sctvonline.vn/channel/sctv6/s1/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://live.fptplay53.net/epzhd2/film360_vhls.smil/chunklist_b5000000.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="sctv7hd" group-title="SCTV" tvg-logo="https://i.ibb.co/VJJ953X/SCTV7-cc.webp",SCTV7
 https://e1.endpoint.cdn.sctvonline.vn/channel/sctv7/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
 #EXTINF:-1 tvg-id="sctv8hd" group-title="SCTV" tvg-logo="https://i.ibb.co/VxHFKfh/SCTV8-cc.webp",SCTV8
@@ -368,9 +368,9 @@ https://smithsonianaus-samsungau.amagi.tv/playlist1080p.m3u8
 
 # ===== Box =====
 #EXTINF:-1 tvg-id="drfithd" group-title="Box" tvg-logo="https://i.ibb.co/t8SWCHJ/DrFit-cc.webp",Box Dr.Fit
-https://e4.endpoint.cdn.sctvonline.vn/hls/drfit/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://oipf0znpmnliv.vcdn.cloud/hls/drfit/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="happykids" group-title="Box" tvg-logo="https://i.ibb.co/72jD6nC/Happy-Kids-cc.webp",Box Happy Kids
-https://e4.endpoint.cdn.sctvonline.vn/hls/happykid/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://oipf0znpmnliv.vcdn.cloud/hls/happykid/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="boxhits" group-title="Box" tvg-logo="https://img-zlr1.tv360.vn/image1/2021/08/03/16/1627983804741/9828b27e4fe4_640_360.png",Box Hits
 https://ff335120300e4742a2b135ee9a9e7df8.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-5983/master.m3u8
 #EXTINF:-1 tvg-id="hollywoodclassics" group-title="Box" tvg-logo="https://i.ibb.co/FbKGWY3/Hollywood-Classics-cc.webp",Box Hollywood Classics
@@ -378,13 +378,13 @@ https://e4.endpoint.cdn.sctvonline.vn/hls/hollywood/index.m3u8|User-Agent=ReactN
 #EXTINF:-1 tvg-id="man" group-title="Box" tvg-logo="https://i.ibb.co/Yj6BTzZ/Man-cc.webp",Box Man
 https://code.vthanhtivi.pw/getlink/cliptv/man/chunklist_b5128000.m3u8
 #EXTINF:-1 tvg-id="boxmovie1" group-title="Box" tvg-logo="https://static.wikia.nocookie.net/logos/images/c/c5/Box_Movie_1.png/revision/latest?cb=20220225030512&path-prefix=vi",Box Movie 1
-https://e4.endpoint.cdn.sctvonline.vn/hls/boxmovie1/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://oipf0znpmnliv.vcdn.cloud/hls/boxmovie1/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="musicbox" group-title="Box" tvg-logo="https://i.ibb.co/Z17szpD/Box-Music-cc.webp",Box Music
-https://e4.endpoint.cdn.sctvonline.vn/hls/boxmusic/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://oipf0znpmnliv.vcdn.cloud/hls/boxmusic/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="planetearthhd" group-title="Box" tvg-logo="https://i.ibb.co/YfRCdT8/Planet-Earth-cc.webp",Box Planet Earth
-https://e4.endpoint.cdn.sctvonline.vn/hls/planetearth/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://oipf0znpmnliv.vcdn.cloud/hls/planetearth/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="woman" group-title="Box" tvg-logo="https://i.ibb.co/MGcnhnG/Woman-cc.png",Box Woman
-https://e4.endpoint.cdn.sctvonline.vn/hls/woman/index.m3u8|User-Agent=ReactNativeVideo%2F3.4.4%20(Linux%3BAndroid%209)%20ExoPlayerLib%2F2.13.3
+https://oipf0znpmnliv.vcdn.cloud/hls/woman/index.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
 #EXTINF:-1 tvg-id="filmbox" group-title="Box" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Filmbox_pl.png/220px-Filmbox_pl.png",Filmbox
 http://94.230.240.17:8080/film_box/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="inthebox" group-title="Box" tvg-logo="https://static.wikia.nocookie.net/logos/images/4/4c/In_The_Box_Channel_2017.png/revision/latest/scale-to-width-down/200?cb=20220515095644&path-prefix=vi",In The Box
