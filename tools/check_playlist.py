@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Triggered health audit for current playlist.
 import concurrent.futures
 import json
 import re
