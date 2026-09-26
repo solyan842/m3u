@@ -104,7 +104,7 @@ https://freem3u.xyz/api/live/play.m3u8?vid=185|User-Agent=Dalvik%2F2.1.0
 #EXTINF:-1 tvg-id="vtvcab7hd" group-title="VTVcab" tvg-logo="https://i.ibb.co/X5RBrJm/VCab7-cc.webp",ON O2TV
 https://freem3u.xyz/api/live/play.m3u8?vid=136|User-Agent=Dalvik%2F2.1.0
 #EXTINF:-1 tvg-id="vtvcab2hd" group-title="VTVcab" tvg-logo="https://i.ibb.co/JnhVYWw/VCab2-cc.webp",ON Phim Việt
-https://freem3u.xyz/api/live/play.m3u8?vid=175|User-Agent=Dalvik%2F2.1.0
+https://api.anttv.xyz/get/vtvcab/vtvcab2/playlist.m3u8|User-Agent=Dalvik%2F2.1.0
 #EXTINF:-1 tvg-id="vtvcab3hd" group-title="VTVcab" tvg-logo="https://i.ibb.co/3r4zsVG/VCab3-cc.webp",ON Sports
 https://freem3u.xyz/api/live/play.m3u8?oid=onsports|User-Agent=Dalvik%2F2.1.0
 #EXTINF:-1 tvg-id="vtvcab18hd" group-title="VTVcab" tvg-logo="https://i.ibb.co/f4KZY6Z/cccab18.webp",ON Sports News
