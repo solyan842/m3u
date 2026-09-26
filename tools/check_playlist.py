@@ -215,7 +215,7 @@ def check_channel(ch):
             if "#EXTM3U" in text:
                 result["kind"] = "hls"
                 result["ok"] = 200 <= int(result["status"]) < 400
-                if ch["group"] in ("HTV", "SCTV"):
+                if ch["group"] in ("HTV", "SCTV", "VTVcab"):
                     deep = deep_probe_hls(text, result["final_url"] or ch["url"], headers, ctx)
                     result.update(deep)
                     result["ok"] = bool(deep["deep_ok"])
