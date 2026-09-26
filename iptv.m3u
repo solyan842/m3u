@@ -44,7 +44,7 @@ https://dethich.pw/htv2/index.m3u8
 #EXTINF:-1 tvg-id="htv3" group-title="HTV" tvg-logo="https://i.ibb.co/s6gVdnY/cchtv3.webp",HTV3
 https://freem3u.xyz/api/live/play.m3u8?vid=192|User-Agent=Dalvik%2F2.1.0
 #EXTINF:-1 tvg-id="htvkey" group-title="HTV" tvg-logo="https://i.ibb.co/McQ45Y9/HTV4.webp",HTV4
-https://dethich.pw/htv4/index.m3u8
+https://freem3u.xyz/api/live/play.m3u8?vid=9|User-Agent=Dalvik%2F2.1.0
 #EXTINF:-1 tvg-id="htv7hd" group-title="HTV" tvg-logo="https://i.ibb.co/C9r5gwM/HTV7-cc.webp",HTV7
 https://dethich.pw/htv7/index.m3u8
 #EXTINF:-1 tvg-id="htv9hd" group-title="HTV" tvg-logo="https://i.ibb.co/tqvWY3q/HTV9-cc.webp",HTV9
