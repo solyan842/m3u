@@ -36,19 +36,19 @@ https://e2.endpoint.cdn.sctvonline.vn/hls/vtv9/index.m3u8|User-Agent=ReactNative
 
 # ===== HTV =====
 #EXTINF:-1 tvg-id="htvthethaohd" group-title="HTV" tvg-logo="https://i.ibb.co/GTnjzYB/HTVThe-Thao.webp",HTV Thể Thao
-https://dethich.pw/htvthethao/index.m3u8
+https://live.fptplay53.net/live/media/htvthethao/live247-hls-avc/htvthethao-avc1_5600000=10000-mp4a_131600=20000.m3u8
 #EXTINF:-1 tvg-id="htv1" group-title="HTV" tvg-logo="https://i.ibb.co/XkLGs0C/HTV1-cc.webp",HTV1
 https://freem3u.xyz/api/live/play.m3u8?vid=190|User-Agent=Dalvik%2F2.1.0
 #EXTINF:-1 tvg-id="htv2hd" group-title="HTV" tvg-logo="https://i.ibb.co/q99PxTH/cchtv2.webp",HTV2
-https://dethich.pw/htv2/index.m3u8
+https://freem3u.xyz/api/live/play.m3u8?vid=191|User-Agent=Dalvik%2F2.1.0
 #EXTINF:-1 tvg-id="htv3" group-title="HTV" tvg-logo="https://i.ibb.co/s6gVdnY/cchtv3.webp",HTV3
 https://freem3u.xyz/api/live/play.m3u8?vid=192|User-Agent=Dalvik%2F2.1.0
 #EXTINF:-1 tvg-id="htvkey" group-title="HTV" tvg-logo="https://i.ibb.co/McQ45Y9/HTV4.webp",HTV4
 https://freem3u.xyz/api/live/play.m3u8?vid=9|User-Agent=Dalvik%2F2.1.0
 #EXTINF:-1 tvg-id="htv7hd" group-title="HTV" tvg-logo="https://i.ibb.co/C9r5gwM/HTV7-cc.webp",HTV7
-https://dethich.pw/htv7/index.m3u8
+https://live.fptplay53.net/live/media/htv7/live247-hls-avc/htv7-avc1_5600000=10000-mp4a_131600=20000.m3u8
 #EXTINF:-1 tvg-id="htv9hd" group-title="HTV" tvg-logo="https://i.ibb.co/tqvWY3q/HTV9-cc.webp",HTV9
-https://dethich.pw/htv9/index.m3u8
+https://live-a.fptplay53.net/live/media/htv9/live247-hls-avc/htv9-avc1_5600000=10000-mp4a_131600=20000.m3u8
 
 # ===== SCTV =====
 #EXTINF:-1 tvg-id="sctv11hd" group-title="SCTV" tvg-logo="https://i.ibb.co/0YC4B8t/SCTV11-cc.webp",SCTV11
