@@ -1,13 +1,6 @@
 #EXTM3U
 # SolYan PUBLIC TV
-# Only live TV feeds with explicit public-use/redistribution basis are included.
-# NASA audiovisual content is generally not subject to U.S. copyright, subject to NASA media guidelines.
-# NASA logos/insignia are intentionally not embedded here.
-# Third-party copyrighted material that may appear inside a NASA production remains subject to its own rights.
-
-# ===== PUBLIC =====
-#EXTINF:-1 tvg-id="NASATVPublic.us" group-title="PUBLIC",NASA TV Public
-https://ntv1.akamaized.net/hls/live/2014075/NASA-NTV1-HLS/master.m3u8
-
-#EXTINF:-1 tvg-id="NASATVMedia.us" group-title="PUBLIC",NASA TV Media
-https://ntv2.akamaized.net/hls/live/2013923/NASA-NTV2-HLS/master.m3u8
+# TV-only public playlist.
+# Inclusion rule: explicit redistribution/public-use basis + currently working direct stream.
+# No channel currently passes both checks.
+# NASA TV Public/Media were rights-compatible candidates, but their legacy HLS media segments returned HTTP 404 on 2026-09-29 and were removed.
