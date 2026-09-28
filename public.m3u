@@ -1,0 +1,18 @@
+#EXTM3U
+# SolYan PUBLIC playlist
+# Only content with explicit open redistribution/sharing permission is included.
+# This file is intentionally separate from iptv.m3u.
+# Attribution must be preserved where required.
+
+# ===== PUBLIC =====
+# Big Buck Bunny — Creative Commons Attribution 3.0
+#EXTINF:-1 group-title="PUBLIC",Big Buck Bunny
+https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_640x360.m4v
+
+# Sintel — Creative Commons Attribution 3.0
+#EXTINF:-1 group-title="PUBLIC",Sintel Trailer
+https://download.blender.org/durian/trailer/sintel_trailer-720p.mp4
+
+# Tears of Steel — Creative Commons Attribution 3.0
+#EXTINF:-1 group-title="PUBLIC",Tears of Steel
+https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov
