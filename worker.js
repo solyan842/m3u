@@ -1,4 +1,5 @@
-const UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/iptv.m3u";
+const MAIN_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/iptv.m3u";
+const PUBLIC_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/public.m3u";
 
 export default {
   async fetch(request) {
@@ -13,7 +14,11 @@ export default {
       });
     }
 
-    const upstream = await fetch(UPSTREAM, {
+    const isPublic = url.pathname === "/public" || url.pathname === "/public.m3u";
+    const upstreamUrl = isPublic ? PUBLIC_UPSTREAM : MAIN_UPSTREAM;
+    const filename = isPublic ? "public.m3u" : "iptv.m3u";
+
+    const upstream = await fetch(upstreamUrl, {
       headers: {
         "User-Agent": "SolYan-IPTV-ShortURL/1.0"
       },
@@ -36,7 +41,7 @@ export default {
         "content-type": "application/vnd.apple.mpegurl; charset=utf-8",
         "cache-control": "public, max-age=60",
         "access-control-allow-origin": "*",
-        "content-disposition": "inline; filename=\"iptv.m3u\""
+        "content-disposition": `inline; filename="${filename}"`
       }
     });
   }
