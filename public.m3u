@@ -1,18 +1,13 @@
 #EXTM3U
-# SolYan PUBLIC playlist
-# Only content with explicit open redistribution/sharing permission is included.
-# This file is intentionally separate from iptv.m3u.
-# Attribution must be preserved where required.
+# SolYan PUBLIC TV
+# Only live TV feeds with explicit public-use/redistribution basis are included.
+# NASA audiovisual content is generally not subject to U.S. copyright, subject to NASA media guidelines.
+# NASA logos/insignia are intentionally not embedded here.
+# Third-party copyrighted material that may appear inside a NASA production remains subject to its own rights.
 
 # ===== PUBLIC =====
-# Big Buck Bunny — Creative Commons Attribution 3.0
-#EXTINF:-1 group-title="PUBLIC",Big Buck Bunny
-https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_640x360.m4v
+#EXTINF:-1 tvg-id="NASATVPublic.us" group-title="PUBLIC",NASA TV Public
+https://ntv1.akamaized.net/hls/live/2014075/NASA-NTV1-HLS/master.m3u8
 
-# Sintel — Creative Commons Attribution 3.0
-#EXTINF:-1 group-title="PUBLIC",Sintel Trailer
-https://download.blender.org/durian/trailer/sintel_trailer-720p.mp4
-
-# Tears of Steel — Creative Commons Attribution 3.0
-#EXTINF:-1 group-title="PUBLIC",Tears of Steel
-https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov
+#EXTINF:-1 tvg-id="NASATVMedia.us" group-title="PUBLIC",NASA TV Media
+https://ntv2.akamaized.net/hls/live/2013923/NASA-NTV2-HLS/master.m3u8
