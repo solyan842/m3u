@@ -1,0 +1,33 @@
+name: PUBLIC IPTV health check
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - "public.m3u"
+      - "tools/check_public_playlist.py"
+      - ".github/workflows/public-iptv-health.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check public playlist streams
+        run: python3 tools/check_public_playlist.py
+
+      - name: Upload public health report
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-iptv-health-report
+          path: |
+            public-health.json
+            public-health-report.md
+          retention-days: 7
