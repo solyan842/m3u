@@ -1,0 +1,67 @@
+name: Probe official VTVGo VTV8
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - ".github/workflows/probe-vtvgo-vtv8.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install playwright@1.55.0 >/dev/null 2>&1
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+
+      - name: Probe VTVGo network
+        run: |
+          cat > probe.js <<'NODE'
+          const { chromium } = require('playwright');
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const context = await browser.newContext({
+              userAgent: 'Mozilla/5.0 (Linux; Android 10; MiTV-MSSP3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+              viewport: { width: 1280, height: 720 },
+              locale: 'vi-VN'
+            });
+            const page = await context.newPage();
+
+            const seen = new Set();
+            function note(kind, url) {
+              if (!url || seen.has(url)) return;
+              if (/\.m3u8(?:\?|$)|\.mpd(?:\?|$)|license|manifest|stream/i.test(url)) {
+                seen.add(url);
+                console.log(kind + ' ' + url);
+              }
+            }
+
+            page.on('request', req => note('REQ', req.url()));
+            page.on('response', res => note('RES ' + res.status(), res.url()));
+            page.on('console', msg => console.log('CONSOLE', msg.type(), msg.text()));
+            page.on('pageerror', err => console.log('PAGEERROR', err.message));
+
+            const url = 'https://vtvgo.vn/channel/36';
+            console.log('OPEN', url);
+            const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+            console.log('PAGE', resp ? resp.status() : 'no-response', page.url());
+
+            await page.waitForTimeout(25000);
+            console.log('TITLE', await page.title());
+            console.log('BODY', (await page.locator('body').innerText()).slice(0, 3000).replace(/\n/g, ' | '));
+            await browser.close();
+          })().catch(e => { console.error(e); process.exit(1); });
+          NODE
+          node probe.js
