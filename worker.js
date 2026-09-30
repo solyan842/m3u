@@ -1,7 +1,7 @@
 const MAIN_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/iptv.m3u";
 const PUBLIC_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/public.m3u";
 const VTHANH_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/vthanhtivi-fpt-test.m3u";
-const VTV8_UPSTREAM = "https://vtvgolive-failover.vtvdigital.vn/vtvgo/vtv8-manifest.m3u8";
+const VTV8_UPSTREAM = "https://vips-livecdn.fptplay.net/hda2/vtv8hd_vhls.smil/chunklist_b5000000.m3u8";
 
 function absolutizeHlsManifest(text, baseUrl) {
   return text
@@ -47,8 +47,8 @@ export default {
       const upstream = await fetch(VTV8_UPSTREAM, {
         headers: {
           "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
-          "Referer": "https://vtvgo.vn/channel/36",
-          "Origin": "https://vtvgo.vn"
+          "Referer": "https://fptplay.vn/",
+          "Origin": "https://fptplay.vn"
         },
         cf: {
           cacheTtl: 5,
