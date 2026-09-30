@@ -4,37 +4,35 @@ const VTHANH_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/vt
 
 const VTV8_CANDIDATES = [
   {
-    name: "SCTV",
-    url: "https://e3.endpoint.cdn.sctvonline.vn/hls/vtv8/index.m3u8",
+    name: "FPT-direct-media",
+    url: "https://vips-livecdn.fptplay.net/live/media/vtv8/live-hls-avc/vtv8-avc1_4000000=10000-mp4a_131600=20000.m3u8",
     headers: {
-      "User-Agent": "ReactNativeVideo/3.4.4 (Linux;Android 9) ExoPlayerLib/2.13.3",
-      "Referer": "http://sctvonline.vn"
+      "User-Agent": "Dalvik/2.1.0"
     }
   },
   {
-    name: "FPT-vips",
-    url: "https://vips-livecdn.fptplay.net/hda2/vtv8hd_vhls.smil/chunklist_b5000000.m3u8",
-    headers: {
-      "User-Agent": "VThanhTivi"
-    }
-  },
-  {
-    name: "FPT53-live247",
-    url: "https://live.fptplay53.net/live/media/vtv8/live247-hls-avc/index.m3u8",
+    name: "DeThich-720p",
+    url: "https://dethich.pw/vtv8/index.m3u8",
     headers: {
       "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
     }
   },
   {
-    name: "VTVGo-failover",
-    url: "https://vtvgolive-failover.vtvdigital.vn/vtvgo/vtv8-manifest.m3u8",
+    name: "Kupjta-VTVGo36",
+    url: "https://kupjta.online/api/vtvgo/36/index.m3u8?vtv8",
     headers: {
-      "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
-      "Referer": "https://vtvgo.vn/channel/36",
-      "Origin": "https://vtvgo.vn"
+      "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+    }
+  },
+  {
+    name: "SCTV-edge-s9",
+    url: "https://s9.edge.cdn.sctvonline.vn/cdn-cgi/edge/v2/e3.endpoint.cdn.sctvonline.vn/nginx.s9.edge.cdn.sctvonline.vn/hls/vtv8/index.m3u8",
+    headers: {
+      "User-Agent": "ReactNativeVideo/3.4.4 (Linux;Android 9) ExoPlayerLib/2.13.3",
+      "Referer": "http://sctvonline.vn/"
     }
   }
-];
+]
 
 function absolutizeHlsManifest(text, baseUrl) {
   return text
