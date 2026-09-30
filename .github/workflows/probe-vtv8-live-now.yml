@@ -1,0 +1,48 @@
+name: Probe VTV8 live now
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - ".github/workflows/probe-vtv8-live-now.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install requests
+      - name: Probe candidates
+        run: |
+          python - <<'PY'
+          import requests
+          from urllib.parse import urljoin
+          candidates=[
+            ("epzhd1-5M","https://live.fptplay53.net/epzhd1/vtv8hd_vhls.smil/chunklist_b5000000.m3u8","Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36"),
+            ("epzhd1-auto","https://live.fptplay53.net/epzhd1/vtv8hd_vhls.smil/chunklist.m3u8","Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36"),
+            ("fnxhd1-5M","https://live.fptplay53.net/fnxhd1/vtv8hd_vhls.smil/chunklist_b5000000.m3u8","Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36"),
+            ("vcdn-1080","http://drfamaga5qliv.vcdn.cloud/vtv08/vtv08@1080p.m3u8","CoocaaTV"),
+          ]
+          for name,url,ua in candidates:
+            print("\n==",name,"==")
+            h={"User-Agent":ua}
+            try:
+              r=requests.get(url,headers=h,timeout=12,allow_redirects=True)
+              print("manifest",r.status_code,r.url,r.headers.get("content-type"),len(r.content))
+              if r.status_code != 200 or "#EXTM3U" not in r.text:
+                continue
+              lines=[x.strip() for x in r.text.splitlines() if x.strip()]
+              seg=next((urljoin(r.url,x) for x in lines if not x.startswith("#")),None)
+              print("first_uri",seg)
+              if seg:
+                sr=requests.get(seg,headers={**h,"Range":"bytes=0-4095"},timeout=12,allow_redirects=True)
+                print("segment",sr.status_code,sr.url,sr.headers.get("content-type"),len(sr.content))
+            except Exception as e:
+              print("ERROR",type(e).__name__,str(e))
+          PY
