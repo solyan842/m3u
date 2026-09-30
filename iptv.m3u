@@ -35,20 +35,51 @@ https://live.fptplay53.net/live/media/quocphongvn/live-hls-avc/quocphongvn.m3u8
 https://live.fptplay53.net/fnxhd1/vntoday_vhls.smil/chunklist.m3u8
 
 # ===== HTV =====
-#EXTINF:-1 tvg-id="htvthethaohd" group-title="HTV" tvg-logo="https://i.ibb.co/GTnjzYB/HTVThe-Thao.webp",HTV Thể Thao
-https://live.fptplay53.net/epzhd1/htvcthethao_vhls.smil/chunklist.m3u8|User-Agent=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
-#EXTINF:-1 tvg-id="htv1" group-title="HTV" tvg-logo="https://i.ibb.co/XkLGs0C/HTV1-cc.webp",HTV1
-https://freem3u.xyz/api/live/play.m3u8?vid=190|User-Agent=Dalvik%2F2.1.0
-#EXTINF:-1 tvg-id="htv2hd" group-title="HTV" tvg-logo="https://i.ibb.co/q99PxTH/cchtv2.webp",HTV2
-https://freem3u.xyz/api/live/play.m3u8?vid=191|User-Agent=Dalvik%2F2.1.0
-#EXTINF:-1 tvg-id="htv3" group-title="HTV" tvg-logo="https://i.ibb.co/s6gVdnY/cchtv3.webp",HTV3
-https://freem3u.xyz/api/live/play.m3u8?vid=192|User-Agent=Dalvik%2F2.1.0
-#EXTINF:-1 tvg-id="htvkey" group-title="HTV" tvg-logo="https://i.ibb.co/McQ45Y9/HTV4.webp",HTV4
-https://freem3u.xyz/api/live/play.m3u8?vid=9|User-Agent=Dalvik%2F2.1.0
-#EXTINF:-1 tvg-id="htv7hd" group-title="HTV" tvg-logo="https://i.ibb.co/C9r5gwM/HTV7-cc.webp",HTV7
-https://freem3u.xyz/api/live/play.m3u8?vid=193|User-Agent=Dalvik%2F2.1.0
-#EXTINF:-1 tvg-id="htv9hd" group-title="HTV" tvg-logo="https://i.ibb.co/tqvWY3q/HTV9-cc.webp",HTV9
-https://freem3u.xyz/api/live/play.m3u8?vid=194|User-Agent=Dalvik%2F2.1.0
+#EXTINF:-1 tvg-id="htv1" group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htv1_165655706945.png",HTV1
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htv1_hls.smil/chunklist.m3u8
+#EXTINF:-1 tvg-id="htv2hd" group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htv2_165657612334.png",HTV2
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htv2hd_vhls.smil/chunklist.m3u8
+#EXTINF:-1 tvg-id="htv3" group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htv3_165655827991.png",HTV3
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htv3_hls.smil/chunklist.m3u8
+#EXTINF:-1 tvg-id="htvkey" group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/OTT/2026/04/11/icon_channel_htv4_177584830716.jpg",HTV Key
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htv4_hls.smil/chunklist.m3u8
+#EXTINF:-1 group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/OTT/2026/04/09/icon_channel_htv5-bchannel_177575159133.jpg",HTV5 Bchannel
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/fnxsd1/btv9_hls.smil/chunklist.m3u8
+#EXTINF:-1 tvg-id="htv7hd" group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htv7-hd_16565582880.png",HTV7
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htv7hd_vhls.smil/chunklist.m3u8
+#EXTINF:-1 tvg-id="htv9hd" group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htv9-hd_165655829886.png",HTV9
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd2/htv9hd_vhls.smil/chunklist.m3u8
+#EXTINF:-1 tvg-id="htvthethaohd" group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htvc-the-thao_165649315483.png",HTV Thể Thao
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htvcthethao_vhls.smil/chunklist.m3u8
+#EXTINF:-1 group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/OTT/2023/04/10/icon_channel_htvc-thuan-viet-hd_168110078414.jpg",HTVC Thuần Việt
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htvcthuanviethd_vhls.smil/chunklist.m3u8
+#EXTINF:-1 group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htvc-gia-dinh_165649309084.png",HTVC Gia Đình
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htvcgiadinh_vhls.smil/chunklist.m3u8
+#EXTINF:-1 group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htvc-phu-nu_165649324998.png",HTVC Phụ Nữ
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htvcphunu_vhls.smil/chunklist.m3u8
+#EXTINF:-1 group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htvc-ca-nhac_165649309816.png",HTVC Ca Nhạc
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htvcmusic_vhls.smil/chunklist.m3u8
+#EXTINF:-1 group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htvc-phim_165649310755.png",HTVC Phim
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htvcmovieshd_vhls.smil/chunklist.m3u8
+#EXTINF:-1 group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htvc-du-lich_165649303894.png",HTVC Du Lịch
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htvcdulich_vhls.smil/chunklist.m3u8
+#EXTINF:-1 group-title="HTV" tvg-logo="https://images.fptplay53.net/media/channels/icon_channel_htvc-plus_165657613324.png",HTVC Plus
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 130.0.6723.116/10.0 TV Safari/537.36
+https://live.fptplay53.net/epzhd1/htvcplus_vhls.smil/chunklist.m3u8
 
 # ===== SCTV =====
 #EXTINF:-1 tvg-id="sctv11hd" group-title="SCTV" tvg-logo="https://i.ibb.co/0YC4B8t/SCTV11-cc.webp",SCTV11
