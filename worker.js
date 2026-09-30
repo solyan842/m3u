@@ -2,104 +2,6 @@ const MAIN_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/iptv
 const PUBLIC_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/public.m3u";
 const VTHANH_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/vthanhtivi-fpt-test.m3u";
 
-const VTV8_CANDIDATES = [
-  {
-    name: "FPT-direct-media",
-    url: "https://vips-livecdn.fptplay.net/live/media/vtv8/live-hls-avc/vtv8-avc1_4000000=10000-mp4a_131600=20000.m3u8",
-    headers: {
-      "User-Agent": "Dalvik/2.1.0"
-    }
-  },
-  {
-    name: "DeThich-720p",
-    url: "https://dethich.pw/vtv8/index.m3u8",
-    headers: {
-      "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-    }
-  },
-  {
-    name: "Kupjta-VTVGo36",
-    url: "https://kupjta.online/api/vtvgo/36/index.m3u8?vtv8",
-    headers: {
-      "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-    }
-  },
-  {
-    name: "SCTV-edge-s9",
-    url: "https://s9.edge.cdn.sctvonline.vn/cdn-cgi/edge/v2/e3.endpoint.cdn.sctvonline.vn/nginx.s9.edge.cdn.sctvonline.vn/hls/vtv8/index.m3u8",
-    headers: {
-      "User-Agent": "ReactNativeVideo/3.4.4 (Linux;Android 9) ExoPlayerLib/2.13.3",
-      "Referer": "http://sctvonline.vn/"
-    }
-  }
-]
-
-function absolutizeHlsManifest(text, baseUrl) {
-  return text
-    .split("\n")
-    .map((line) => {
-      const trimmed = line.trim();
-
-      if (!trimmed) return line;
-
-      if (!trimmed.startsWith("#")) {
-        try {
-          return new URL(trimmed, baseUrl).toString();
-        } catch {
-          return line;
-        }
-      }
-
-      return line.replace(/URI="([^"]+)"/g, (match, uri) => {
-        try {
-          return `URI="${new URL(uri, baseUrl).toString()}"`;
-        } catch {
-          return match;
-        }
-      });
-    })
-    .join("\n");
-}
-
-async function fetchVtv8Manifest() {
-  const diagnostics = [];
-
-  for (const candidate of VTV8_CANDIDATES) {
-    try {
-      const response = await fetch(candidate.url, {
-        headers: candidate.headers,
-        redirect: "follow",
-        cf: {
-          cacheTtl: 5,
-          cacheEverything: true
-        }
-      });
-
-      const text = await response.text();
-      const isManifest = response.ok && text.includes("#EXTM3U");
-
-      diagnostics.push(
-        `${candidate.name}=${response.status}${isManifest ? ":ok" : ":invalid"}`
-      );
-
-      if (isManifest) {
-        const finalUrl = response.url || candidate.url;
-        return {
-          manifest: absolutizeHlsManifest(text, finalUrl),
-          source: candidate.name,
-          diagnostics
-        };
-      }
-    } catch (error) {
-      diagnostics.push(
-        `${candidate.name}=fetch-error:${error?.name || "Error"}`
-      );
-    }
-  }
-
-  return { manifest: null, source: null, diagnostics };
-}
-
 export default {
   async fetch(request) {
     const url = new URL(request.url);
@@ -109,34 +11,6 @@ export default {
         headers: {
           "content-type": "text/plain; charset=utf-8",
           "cache-control": "no-store"
-        }
-      });
-    }
-
-    if (url.pathname === "/vtv8" || url.pathname === "/vtv8.m3u8") {
-      const result = await fetchVtv8Manifest();
-
-      if (!result.manifest) {
-        return new Response(
-          "VTV8 manifest unavailable\n" + result.diagnostics.join("\n") + "\n",
-          {
-            status: 502,
-            headers: {
-              "content-type": "text/plain; charset=utf-8",
-              "cache-control": "no-store",
-              "access-control-allow-origin": "*"
-            }
-          }
-        );
-      }
-
-      return new Response(result.manifest, {
-        status: 200,
-        headers: {
-          "content-type": "application/vnd.apple.mpegurl; charset=utf-8",
-          "cache-control": "no-store",
-          "access-control-allow-origin": "*",
-          "x-solyan-vtv8-source": result.source
         }
       });
     }
