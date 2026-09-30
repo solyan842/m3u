@@ -1,5 +1,6 @@
 const MAIN_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/iptv.m3u";
 const PUBLIC_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/public.m3u";
+const VTHANH_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/vthanhtivi-fpt-test.m3u";
 
 export default {
   async fetch(request) {
@@ -15,8 +16,23 @@ export default {
     }
 
     const isPublic = url.pathname === "/public" || url.pathname === "/public.m3u";
-    const upstreamUrl = isPublic ? PUBLIC_UPSTREAM : MAIN_UPSTREAM;
-    const filename = isPublic ? "public.m3u" : "iptv.m3u";
+    const isVThanh =
+      url.pathname === "/vthanh" ||
+      url.pathname === "/vthanh.m3u" ||
+      url.pathname === "/vthanhtivi" ||
+      url.pathname === "/vthanhtivi.m3u";
+
+    const upstreamUrl = isPublic
+      ? PUBLIC_UPSTREAM
+      : isVThanh
+        ? VTHANH_UPSTREAM
+        : MAIN_UPSTREAM;
+
+    const filename = isPublic
+      ? "public.m3u"
+      : isVThanh
+        ? "vthanhtivi-fpt-test.m3u"
+        : "iptv.m3u";
 
     const upstream = await fetch(upstreamUrl, {
       headers: {
