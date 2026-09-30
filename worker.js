@@ -1,6 +1,34 @@
 const MAIN_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/iptv.m3u";
 const PUBLIC_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/public.m3u";
 const VTHANH_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/vthanhtivi-fpt-test.m3u";
+const VTV8_UPSTREAM = "https://vtvgolive-failover.vtvdigital.vn/vtvgo/vtv8-manifest.m3u8";
+
+function absolutizeHlsManifest(text, baseUrl) {
+  return text
+    .split("\n")
+    .map((line) => {
+      const trimmed = line.trim();
+
+      if (!trimmed) return line;
+
+      if (!trimmed.startsWith("#")) {
+        try {
+          return new URL(trimmed, baseUrl).toString();
+        } catch {
+          return line;
+        }
+      }
+
+      return line.replace(/URI="([^"]+)"/g, (match, uri) => {
+        try {
+          return `URI="${new URL(uri, baseUrl).toString()}"`;
+        } catch {
+          return match;
+        }
+      });
+    })
+    .join("\n");
+}
 
 export default {
   async fetch(request) {
@@ -11,6 +39,43 @@ export default {
         headers: {
           "content-type": "text/plain; charset=utf-8",
           "cache-control": "no-store"
+        }
+      });
+    }
+
+    if (url.pathname === "/vtv8" || url.pathname === "/vtv8.m3u8") {
+      const upstream = await fetch(VTV8_UPSTREAM, {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
+          "Referer": "https://vtvgo.vn/channel/36",
+          "Origin": "https://vtvgo.vn"
+        },
+        cf: {
+          cacheTtl: 5,
+          cacheEverything: true
+        }
+      });
+
+      if (!upstream.ok) {
+        return new Response("VTV8 manifest unavailable\n", {
+          status: 502,
+          headers: {
+            "content-type": "text/plain; charset=utf-8",
+            "cache-control": "no-store",
+            "access-control-allow-origin": "*"
+          }
+        });
+      }
+
+      const finalUrl = upstream.url || VTV8_UPSTREAM;
+      const manifest = absolutizeHlsManifest(await upstream.text(), finalUrl);
+
+      return new Response(manifest, {
+        status: 200,
+        headers: {
+          "content-type": "application/vnd.apple.mpegurl; charset=utf-8",
+          "cache-control": "no-store",
+          "access-control-allow-origin": "*"
         }
       });
     }
