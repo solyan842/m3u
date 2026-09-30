@@ -1,7 +1,40 @@
 const MAIN_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/iptv.m3u";
 const PUBLIC_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/public.m3u";
 const VTHANH_UPSTREAM = "https://raw.githubusercontent.com/solyan842/m3u/main/vthanhtivi-fpt-test.m3u";
-const VTV8_UPSTREAM = "https://vips-livecdn.fptplay.net/hda2/vtv8hd_vhls.smil/chunklist_b5000000.m3u8";
+
+const VTV8_CANDIDATES = [
+  {
+    name: "SCTV",
+    url: "https://e3.endpoint.cdn.sctvonline.vn/hls/vtv8/index.m3u8",
+    headers: {
+      "User-Agent": "ReactNativeVideo/3.4.4 (Linux;Android 9) ExoPlayerLib/2.13.3",
+      "Referer": "http://sctvonline.vn"
+    }
+  },
+  {
+    name: "FPT-vips",
+    url: "https://vips-livecdn.fptplay.net/hda2/vtv8hd_vhls.smil/chunklist_b5000000.m3u8",
+    headers: {
+      "User-Agent": "VThanhTivi"
+    }
+  },
+  {
+    name: "FPT53-live247",
+    url: "https://live.fptplay53.net/live/media/vtv8/live247-hls-avc/index.m3u8",
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+    }
+  },
+  {
+    name: "VTVGo-failover",
+    url: "https://vtvgolive-failover.vtvdigital.vn/vtvgo/vtv8-manifest.m3u8",
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
+      "Referer": "https://vtvgo.vn/channel/36",
+      "Origin": "https://vtvgo.vn"
+    }
+  }
+];
 
 function absolutizeHlsManifest(text, baseUrl) {
   return text
@@ -30,6 +63,45 @@ function absolutizeHlsManifest(text, baseUrl) {
     .join("\n");
 }
 
+async function fetchVtv8Manifest() {
+  const diagnostics = [];
+
+  for (const candidate of VTV8_CANDIDATES) {
+    try {
+      const response = await fetch(candidate.url, {
+        headers: candidate.headers,
+        redirect: "follow",
+        cf: {
+          cacheTtl: 5,
+          cacheEverything: true
+        }
+      });
+
+      const text = await response.text();
+      const isManifest = response.ok && text.includes("#EXTM3U");
+
+      diagnostics.push(
+        `${candidate.name}=${response.status}${isManifest ? ":ok" : ":invalid"}`
+      );
+
+      if (isManifest) {
+        const finalUrl = response.url || candidate.url;
+        return {
+          manifest: absolutizeHlsManifest(text, finalUrl),
+          source: candidate.name,
+          diagnostics
+        };
+      }
+    } catch (error) {
+      diagnostics.push(
+        `${candidate.name}=fetch-error:${error?.name || "Error"}`
+      );
+    }
+  }
+
+  return { manifest: null, source: null, diagnostics };
+}
+
 export default {
   async fetch(request) {
     const url = new URL(request.url);
@@ -44,38 +116,29 @@ export default {
     }
 
     if (url.pathname === "/vtv8" || url.pathname === "/vtv8.m3u8") {
-      const upstream = await fetch(VTV8_UPSTREAM, {
-        headers: {
-          "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
-          "Referer": "https://fptplay.vn/",
-          "Origin": "https://fptplay.vn"
-        },
-        cf: {
-          cacheTtl: 5,
-          cacheEverything: true
-        }
-      });
+      const result = await fetchVtv8Manifest();
 
-      if (!upstream.ok) {
-        return new Response("VTV8 manifest unavailable\n", {
-          status: 502,
-          headers: {
-            "content-type": "text/plain; charset=utf-8",
-            "cache-control": "no-store",
-            "access-control-allow-origin": "*"
+      if (!result.manifest) {
+        return new Response(
+          "VTV8 manifest unavailable\n" + result.diagnostics.join("\n") + "\n",
+          {
+            status: 502,
+            headers: {
+              "content-type": "text/plain; charset=utf-8",
+              "cache-control": "no-store",
+              "access-control-allow-origin": "*"
+            }
           }
-        });
+        );
       }
 
-      const finalUrl = upstream.url || VTV8_UPSTREAM;
-      const manifest = absolutizeHlsManifest(await upstream.text(), finalUrl);
-
-      return new Response(manifest, {
+      return new Response(result.manifest, {
         status: 200,
         headers: {
           "content-type": "application/vnd.apple.mpegurl; charset=utf-8",
           "cache-control": "no-store",
-          "access-control-allow-origin": "*"
+          "access-control-allow-origin": "*",
+          "x-solyan-vtv8-source": result.source
         }
       });
     }
