@@ -1,0 +1,37 @@
+name: Audit VietMiTV public list
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - ".github/workflows/audit-vietmitv-public.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch VietMiTV public playlist
+        run: |
+          curl -fL --retry 2             https://raw.githubusercontent.com/vietng228/m3u/main/m3u.m3u             -o iptv.m3u
+          grep -c '^#EXTINF' iptv.m3u
+
+      - name: Check VietMiTV streams
+        run: python3 tools/check_playlist.py
+
+      - name: Upload audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: vietmitv-public-audit
+          path: |
+            iptv.m3u
+            health.json
+            health-report.md
+          retention-days: 2
