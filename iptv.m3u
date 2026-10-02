@@ -198,15 +198,6 @@ https://freem3u.xyz/api/live/play.m3u8?vid=177|User-Agent=Dalvik%2F2.1.0
 https://freem3u.xyz/api/live/play.m3u8?vid=180|User-Agent=Dalvik%2F2.1.0
 
 # ===== Địa phương =====
-#EXTINF:-1 tvg-id="AnGiangTV1" group-title="Địa phương",An Giang TV1
-https://live.fptplay53.net/epzsd1/angiang01_hls.smil/chunklist.m3u8|User-Agent=Dalvik%2F2.1.0
-https://tv.angiangtv.vn/live/kgtv/kgtv.m3u8
-#EXTINF:-1 tvg-id="AnGiangTV2" group-title="Địa phương",An Giang TV2
-https://live.fptplay53.net/epzsd1/angiang_hls.smil/chunklist.m3u8|User-Agent=Dalvik%2F2.1.0
-https://tv.angiangtv.vn/live/kgtv2/kgtv2.m3u8
-#EXTINF:-1 tvg-id="AnGiangTV3" group-title="Địa phương",An Giang TV3
-https://live.fptplay53.net/epzsd1/angiang03_hls.smil/chunklist.m3u8|User-Agent=Dalvik%2F2.1.0
-https://tv.angiangtv.vn/live/kgtv1/kgtv1.m3u8
 #EXTINF:-1 tvg-id="CaMauTV" group-title="Địa phương",Cà Mau TV
 https://tv.ctvcamau.vn/live/tv/tv.m3u8
 #EXTINF:-1 tvg-id="CanThoTV2" group-title="Địa phương",Can Tho TV 2
